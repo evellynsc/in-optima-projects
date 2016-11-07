@@ -1,0 +1,11 @@
+<h2>{{budget.name}}</h2>
+<i>{{budget.description}}</i><br />
+<span>{{budget.deadline}}</span>
+<ul *ngFor="let project of projects">
+  <li>
+    <strong>{{project.name}}</strong> <br />
+    <a (click)="gotoProjDetail(project)"><ins>Ver Detalhes</ins></a>
+    <br />
+    <a>Excluir</a>
+  </li>
+</ul>

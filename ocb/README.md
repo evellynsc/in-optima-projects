@@ -1,6 +1,4 @@
 # OneClick Budget Prototype
-[![Build Status][in-optima-url]]
-[in-optima-url]: https://in-optima.com.br
 
 ## Modules
   1. Budget
