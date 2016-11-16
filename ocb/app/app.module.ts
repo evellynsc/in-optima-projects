@@ -1,8 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { BudgetModule } from './modules/budget.module';
-import { AppRoutingModule } from './modules/app-routing.module';
+import { BudgetModule } from './budget/budget.module';
+// import { ProjectModule } from './project/project.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   imports:      [
     AppRoutingModule,
     BrowserModule,
-    BudgetModule
+    BudgetModule,
+    // ProjectModule
   ],
   declarations: [
     AppComponent,

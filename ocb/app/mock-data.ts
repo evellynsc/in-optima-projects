@@ -1,6 +1,6 @@
-import { Item } from './item/model/item';
-import { Project } from './project/model/project';
-import { Budget } from './budget/model/budget';
+import { Item } from './item/item';
+import { Project } from './project/project';
+import { Budget } from './budget/budget';
 
 export const ITEMS: Item[] = [
   { id: 1, description: 'Item 1' },
@@ -41,6 +41,15 @@ export function getProject(id: number): Project {
       return project;
     }
   }
+}
+
+export function getProjectsByBudget(budgetId: number): Project[] {
+  let projects: Project[] = [];
+  let proj_ids = this.getBudget(budgetId).project_ids;
+  for (let id of proj_ids) {
+    projects.push(this.getProject(id));
+  }
+  return projects;
 }
 
 export function getItem(id: number): Item {

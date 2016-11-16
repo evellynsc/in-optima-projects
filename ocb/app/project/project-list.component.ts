@@ -2,18 +2,16 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { Project } from './project';
+import { getProjectsByBudget } from '../mock-data';
 
-import { Budget } from '../../budget/model/budget';
-import { Project } from '../model/project';
-import { getBudget } from '../../mock-data';
-import { getProject } from '../../mock-data';
-
+// TODO: verificar se esse componente vai listar os projetos de um orçamento ou listar somente os modelos de projeto!!
 @Component({
   moduleId: module.id,
-  selector: 'list-projects',
-  templateUrl: 'projects.component.html'
+  selector: 'project-list',
+  templateUrl: 'project-list.component.html'
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectListComponent implements OnInit {
   selectedBudgetId: number;
   projects: Project[] = [];
 
@@ -23,14 +21,10 @@ export class ProjectsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let budget: Budget;
     this.currentRoute.params.forEach( (params: Params) => {
       let budget_id = this.selectedBudgetId = +params['bid'];
-      budget = getBudget(budget_id);
+      this.projects = getProjectsByBudget(budget_id);
     });
-    for (let proj_id of budget.project_ids) {
-      this.projects.push(getProject(proj_id));
-    }
   }
 
   gotoProjDetail(project: Project): void {

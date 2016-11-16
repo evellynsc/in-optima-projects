@@ -1,4 +1,4 @@
-import { Project } from '../../project/model/project';
+// import { Project } from '../project/project';
 
 export class Budget {
   id: number;

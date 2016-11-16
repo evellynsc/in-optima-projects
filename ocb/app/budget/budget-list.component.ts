@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Budget } from '../model/budget';
-import { BUDGETS } from '../../mock-data';
+import { Budget } from './budget';
+import { BUDGETS } from '../mock-data';
 
 
 @Component({

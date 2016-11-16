@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Project } from '../model/project';
-import { Item } from '../../item/model/item';
-import { getProject } from '../../mock-data';
-import { getItem } from '../../mock-data';
+import { Project } from './project';
+import { Item } from '../item/item';
+import { getProject } from '../mock-data';
+import { getItem } from '../mock-data';
 
 
 @Component({

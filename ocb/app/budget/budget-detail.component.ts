@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Budget } from '../model/budget';
-import { Project } from '../../project/model/project';
-import { getBudget } from '../../mock-data';
-import { getProject } from '../../mock-data';
+import { Budget } from './budget';
+import { Project } from '../project/project';
+import { getBudget } from '../mock-data';
+import { getProject } from '../mock-data';
 
 @Component({
   moduleId: module.id,
