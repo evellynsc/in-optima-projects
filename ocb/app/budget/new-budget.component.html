@@ -1,0 +1,23 @@
+<h5>Novo Orçamento</h5>
+
+<div style="width:800px">
+  <form [formGroup]="form">
+    <p>
+      <mdl-textfield label="Título" name="title" type="text" formControlName="title" floating-label></mdl-textfield>
+    </p>
+    <p>
+      <mdl-textfield label="Descrição" name="description" type="text" formControlName="description" rows="3" maxrows="5" floating-label></mdl-textfield>
+    </p>
+    <p>
+      <!-- <mdl-select [(ngModel)]="personId" FormControlName="personId">
+        <mdl-option *ngFor="let m of months">{{m}}</mdl-option>
+      </mdl-select> -->
+      <span>Prazo</span><br/>
+      <my-date-picker [options]="myDatePickerOptions"
+                (dateChanged)="onDateChanged($event)" id="date-picker"></my-date-picker>
+    </p>
+    <p>
+      <button mdl-button (click)="onSubmit()"  [disabled]="!form.valid" mdl-button-type="raised" mdl-ripple mdl-colored="primary">Salvar</button>
+    </p>
+  </form>
+</div>

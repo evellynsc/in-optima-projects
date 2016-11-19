@@ -1,26 +1,28 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ProjectModule } from '../project/project.module';
+// import { ProjectModule } from '../project/project.module';
 
-import { BudgetHomeComponent } from './budget-home.component';
+
 import { BudgetListComponent }    from './budget-list.component';
 import { BudgetDetailComponent }  from './budget-detail.component';
+import { NewBudgetComponent } from './new-budget.component';
+import { ProjectListComponent } from '../project/project-list.component';
 import { ProjectDetailComponent } from '../project/project-detail.component';
 
 @NgModule({
   imports: [
-    ProjectModule,
+    // ProjectModule,
     RouterModule.forChild([
-      // { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
         path: '',
-        component: BudgetHomeComponent,
         children: [
           { path: 'budgets',  component: BudgetListComponent },
+          { path: 'budget/new',  component: NewBudgetComponent },
           {
             path: 'budget/:bid',
+            component: BudgetDetailComponent,
             children: [
-              { path: '', component: BudgetDetailComponent },
+              { path: '', component: ProjectListComponent },
               { path: 'project/:pid', component: ProjectDetailComponent }
             ]
           }
@@ -33,4 +35,4 @@ import { ProjectDetailComponent } from '../project/project-detail.component';
     RouterModule
   ]
 })
-export class BudgetHomeRoutingModule { }
+export class BudgetRoutingModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Location }                 from '@angular/common';
 
 import { Project } from './project';
 import { Item } from '../item/item';
@@ -18,7 +19,7 @@ export class ProjectDetailComponent implements OnInit {
   items: Item[] = [];
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ){ }
 
   ngOnInit(): void {
@@ -30,4 +31,5 @@ export class ProjectDetailComponent implements OnInit {
       this.items.push(getItem(item_id));
     }
   }
+
 }

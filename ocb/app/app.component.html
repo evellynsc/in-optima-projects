@@ -1,0 +1,34 @@
+<!-- <ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item?.description}}
+  </li>
+</ul>
+
+<h1>{{ (item | async)?.description }}</h1> -->
+
+<mdl-layout mdl-layout-fixed-header>
+  <mdl-layout-header class="mdl-layout--no-desktop-drawer-button">
+     <mdl-layout-header-row class="main-header">
+        <mdl-layout-title class="docs-layout-title" routerLink=''>OneClick Budget</mdl-layout-title>
+        <mdl-layout-spacer></mdl-layout-spacer>
+        <!-- Navigation. We hide it in small screens. -->
+        <!-- <nav class="mdl-navigation mdl-layout--large-screen-only">
+           <a class="mdl-navigation__link" >Link</a>
+           <a class="mdl-navigation__link" >Link</a>
+           <a class="mdl-navigation__link" >Link</a>
+        </nav> -->
+     </mdl-layout-header-row>
+  </mdl-layout-header>
+  <!-- <mdl-layout-drawer style="margin-top:65px;">
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" routerLink='home' RouterLinkActive="active">Home</a>
+    </nav>
+  </mdl-layout-drawer> -->
+  <mdl-layout-content>
+    <div class="mdl-grid">
+      <div class="mdl-cell">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mdl-layout-content>
+</mdl-layout>

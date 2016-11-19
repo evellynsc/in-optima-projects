@@ -1,33 +1,40 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BudgetHomeRoutingModule } from './budget-home-routing.module';
+import { MdlModule } from 'angular2-mdl';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MdlSelectModule } from '@angular2-mdl-ext/select';
+import { MyDatePickerModule } from 'mydatepicker/dist/my-date-picker.module';
 
-import { BudgetHomeComponent } from './budget-home.component';
+import { BudgetRoutingModule } from './budget-routing.module';
+import { ProjectModule } from '../project/project.module';
+
 import { BudgetListComponent } from './budget-list.component';
 import { BudgetDetailComponent } from './budget-detail.component';
-
-
-// import { ProjectListComponent } from '../project/project-list.component';
-// import { ProjectDetailComponent } from '../project/project-detail.component';
+import { NewBudgetComponent } from './new-budget.component';
+import { BudgetService } from './budget.service';
 
 @NgModule({
   imports: [
     BrowserModule,
-    BudgetHomeRoutingModule
+    BudgetRoutingModule,
+    ProjectModule,
+    MdlModule,
+    ReactiveFormsModule,
+    MdlSelectModule,
+    MyDatePickerModule,
   ],
   declarations: [
     BudgetListComponent,
     BudgetDetailComponent,
-    BudgetHomeComponent
-    // ProjectListComponent,
-    // ProjectDetailComponent
+    NewBudgetComponent,
   ],
   exports: [
     BudgetListComponent,
     BudgetDetailComponent,
-    BudgetHomeComponent
-    // ProjectListComponent,
-    // ProjectDetailComponent
+    NewBudgetComponent,
+  ],
+  providers: [
+    BudgetService
   ]
 })
 export class BudgetModule { }

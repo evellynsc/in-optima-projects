@@ -22,9 +22,9 @@ export const PROJECTS: Project[] = [
   { id: 4, name: 'Project 4', description: 'Project Description 4', item_ids: [6,8,9]}
 ];
 
-export const BUDGETS: Budget[] = [
-  { id: 1, name: 'Budget 1', description: 'Budget description 1', deadline: new Date('1968-11-16T00:00:00'), project_ids: [1,3], proposal_ids: []},
-  { id: 2, name: 'Budget 2', description: 'Budget description 2', deadline: new Date('1989-11-16T00:00:00'), project_ids: [2,4], proposal_ids: []},
+export var BUDGETS: Budget[] = [
+  { id: 1, name: 'Budget 1', description: 'Budget description 1', deadline: new Date('1968-11-16T00:00:00'), project_ids: [1,3], proposal_ids: [], lastModification: new Date('2016-11-15T00:00:00'), creation: new Date('2016-11-10T00:00:00')},
+  { id: 2, name: 'Budget 2', description: 'Budget description 2', deadline: new Date('1989-11-16T00:00:00'), project_ids: [2,4], proposal_ids: [], lastModification: new Date('2016-11-13T00:00:00'), creation: new Date('2016-11-11T00:00:00')},
 ];
 
 export function getBudget(id: number): Budget {
